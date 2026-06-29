@@ -1,0 +1,540 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+overflow:hidden;
+background:#000;
+color:#fff;
+height:100vh;
+}
+
+.hero{
+position:fixed;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:
+linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.75)),
+url("couple.jpg") center center/cover no-repeat;
+animation:zoomBackground 20s ease-in-out infinite alternate;
+z-index:-4;
+}
+
+@keyframes zoomBackground{
+from{
+transform:scale(1);
+}
+to{
+transform:scale(1.08);
+}
+}
+
+.overlay{
+position:fixed;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.25);
+backdrop-filter:blur(2px);
+z-index:-3;
+}
+
+.container{
+position:relative;
+width:100%;
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+padding:30px;
+text-align:center;
+}
+
+.topText{
+font-size:30px;
+letter-spacing:2px;
+margin-bottom:30px;
+}
+
+#countdown{
+font-size:110px;
+font-weight:700;
+color:#ff9ecf;
+text-shadow:
+0 0 20px hotpink,
+0 0 40px deeppink;
+margin-bottom:20px;
+}
+
+#birthdaySection{
+display:none;
+max-width:900px;
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(12px);
+padding:45px;
+border-radius:30px;
+box-shadow:
+0 0 40px rgba(255,0,120,.25);
+animation:fadeIn 2s;
+}
+
+@keyframes fadeIn{
+
+from{
+
+opacity:0;
+transform:translateY(50px);
+
+}
+
+to{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+#birthdaySection h1{
+
+font-size:70px;
+font-family:'Dancing Script',cursive;
+color:#ffc0cb;
+margin-bottom:20px;
+
+}
+
+#birthdaySection h3{
+
+font-size:26px;
+font-weight:400;
+margin-bottom:30px;
+color:#ffd6e7;
+
+}
+
+#birthdaySection p{
+
+line-height:2;
+font-size:21px;
+
+}
+
+.signature{
+
+margin-top:40px;
+
+font-size:24px;
+
+}
+
+.signature h2{
+
+font-family:'Dancing Script',cursive;
+font-size:55px;
+margin-top:10px;
+color:#ff9ecf;
+
+}
+
+button{
+
+padding:18px 40px;
+border:none;
+border-radius:50px;
+background:#ff3b8d;
+font-size:18px;
+color:#fff;
+cursor:pointer;
+margin-top:35px;
+transition:.4s;
+
+}
+
+button:hover{
+
+transform:scale(1.08);
+box-shadow:0 0 25px hotpink;
+
+}
+
+#loveLetter{
+
+display:none;
+margin-top:35px;
+max-width:700px;
+background:rgba(255,255,255,.1);
+padding:35px;
+border-radius:25px;
+backdrop-filter:blur(12px);
+animation:fadeIn 1.5s;
+
+}
+
+#loveLetter h2{
+
+margin-bottom:20px;
+font-size:40px;
+color:#ffc0cb;
+
+}
+
+#loveLetter p{
+
+font-size:22px;
+line-height:2;
+
+}
+
+#gallery{
+
+display:none;
+margin-top:35px;
+
+}
+
+#gallery img{
+
+width:300px;
+height:380px;
+object-fit:cover;
+border-radius:20px;
+box-shadow:
+0 0 30px rgba(255,255,255,.35);
+
+animation:floatImage 5s ease-in-out infinite;
+
+}
+
+@keyframes floatImage{
+
+0%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-10px);
+}
+
+100%{
+transform:translateY(0);
+}
+
+}
+
+#song{
+margin-top:30px;
+}
+
+#song button{
+
+background:#ff4081;
+padding:15px 35px;
+border:none;
+border-radius:40px;
+color:white;
+font-size:20px;
+cursor:pointer;
+transition:.4s;
+margin-top:25px;
+
+}
+
+#song button:hover{
+
+background:#ff6fa7;
+transform:scale(1.05);
+
+}
+/* ===========================
+   STARS
+=========================== */
+
+#stars{
+position:fixed;
+left:0;
+top:0;
+width:100%;
+height:100%;
+pointer-events:none;
+overflow:hidden;
+z-index:-2;
+}
+
+.star{
+position:absolute;
+width:2px;
+height:2px;
+background:white;
+border-radius:50%;
+animation:twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+from{
+opacity:.2;
+transform:scale(.8);
+}
+to{
+opacity:1;
+transform:scale(1.5);
+}
+}
+
+/* ===========================
+   HEARTS
+=========================== */
+
+#hearts{
+position:fixed;
+left:0;
+top:0;
+width:100%;
+height:100%;
+overflow:hidden;
+pointer-events:none;
+}
+
+.heart{
+position:absolute;
+bottom:-60px;
+font-size:30px;
+animation:heartFloat linear forwards;
+filter:drop-shadow(0 0 10px hotpink);
+}
+
+@keyframes heartFloat{
+
+0%{
+transform:translateY(0) rotate(0deg);
+opacity:1;
+}
+
+100%{
+transform:translateY(-120vh) rotate(360deg);
+opacity:0;
+}
+
+}
+
+/* ===========================
+   ROSE PETALS
+=========================== */
+
+#petals{
+
+position:fixed;
+width:100%;
+height:100%;
+overflow:hidden;
+pointer-events:none;
+
+}
+
+.petal{
+
+position:absolute;
+
+top:-50px;
+
+font-size:22px;
+
+animation:petalFall linear forwards;
+
+}
+
+@keyframes petalFall{
+
+0%{
+transform:translateY(0) rotate(0deg);
+opacity:1;
+}
+
+100%{
+transform:
+translateY(120vh)
+translateX(80px)
+rotate(360deg);
+
+opacity:0;
+}
+
+}
+
+/* ===========================
+   CAKE
+=========================== */
+
+#cakeSection{
+
+display:none;
+margin-top:40px;
+
+}
+
+.cake{
+
+width:180px;
+height:120px;
+background:#ff8fa3;
+border-radius:20px;
+position:relative;
+margin:auto;
+
+box-shadow:0 0 25px rgba(255,105,180,.4);
+
+}
+
+.cake::before{
+
+content:"";
+
+position:absolute;
+
+top:18px;
+left:0;
+
+width:100%;
+height:15px;
+
+background:#fff;
+
+}
+
+.candle{
+
+position:absolute;
+left:50%;
+transform:translateX(-50%);
+top:-45px;
+
+width:12px;
+height:45px;
+background:#ffffff;
+
+}
+
+.flame{
+
+position:absolute;
+top:-18px;
+left:50%;
+transform:translateX(-50%);
+
+width:16px;
+height:24px;
+
+background:orange;
+
+border-radius:50% 50% 50% 50%;
+
+box-shadow:
+0 0 20px yellow,
+0 0 35px orange;
+
+animation:flicker .25s infinite;
+
+}
+
+@keyframes flicker{
+
+0%{
+transform:translateX(-50%) scale(1);
+}
+
+50%{
+transform:translateX(-50%) scale(1.15);
+}
+
+100%{
+transform:translateX(-50%) scale(.95);
+}
+
+}
+
+/* ===========================
+   FIREWORKS
+=========================== */
+
+#fireworks{
+
+position:fixed;
+
+left:0;
+top:0;
+
+width:100%;
+height:100%;
+
+pointer-events:none;
+
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:768px){
+
+#birthdaySection{
+
+padding:25px;
+
+}
+
+#birthdaySection h1{
+
+font-size:45px;
+
+}
+
+#birthdaySection p{
+
+font-size:17px;
+
+}
+
+.signature h2{
+
+font-size:38px;
+
+}
+
+#countdown{
+
+font-size:70px;
+
+}
+
+.topText{
+
+font-size:22px;
+
+}
+
+button{
+
+width:100%;
+
+}
+
+#gallery img{
+
+width:240px;
+height:320px;
+
+}
+
+}
