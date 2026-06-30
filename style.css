@@ -10,10 +10,11 @@ scroll-behavior:smooth;
 }
 
 body{
-overflow:hidden;
 background:#000;
 color:#fff;
-height:100vh;
+min-height:100vh;
+overflow-y:auto;
+overflow-x:hidden;
 }
 
 .hero{
@@ -52,12 +53,12 @@ z-index:-3;
 .container{
 position:relative;
 width:100%;
-height:100vh;
+min-height:100vh;
 display:flex;
 flex-direction:column;
-justify-content:center;
+justify-content:flex-start;
 align-items:center;
-padding:30px;
+padding:60px 20px;
 text-align:center;
 }
 
